@@ -17,6 +17,8 @@ arxiv cs cl RSS からいい感じに新着をとってくるスクリプト
 HOME 以下に yaml format で置く
 - url: slack webhook url
 - abst\_type: textrank or lead-3
+- time\_log: log path (feed time が入ってくる)
+- exec\_log: log path (logging が入ってくる)
 
 ## requirements
 - feedparser

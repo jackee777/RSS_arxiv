@@ -107,6 +107,9 @@ def main():
         logging(config['exec_log'], message)
         sys.exit(0)
 
+    # entry が100件越えると自動で死ぬようにする
+    assert len(rss_result['entries']) <= 100, 'the entry num: {}'.format(len(rss_result['entries']))
+
     # 1エントリずつ parse -> 入れ物へ
     for entry in rss_result['entries']:
         parsed_entry = Entry(entry, config['abst_type'])

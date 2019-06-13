@@ -10,7 +10,6 @@ import os
 import sys
 
 # TODO: connection error; detect Robot へのエラー検出
-# slack の attachment が一回につき100件まで; 超えたら死にます
 # summary は textrank or lead-3
 # config は yaml format; home 以下においてあること前提
 # (c) Satoru Katsumata
@@ -39,8 +38,10 @@ class Entry:
         supplement_info = re.search('\(arXiv:.+\)$', entry['title']).group()
         self.area = re.search('\[.+\]', supplement_info).group()
         self.title = self.title + '\t' + self.area
+        self.is_update = False
         if re.search('UPDATED', supplement_info):
             self.title = self.title + '\t[UPDATED]' 
+            self.is_update = True
 
     def make_attachment(self):
         # slack へ送るように整形
@@ -49,7 +50,11 @@ class Entry:
         attachment['title'] = self.title
         attachment['title_link'] = self.url
         attachment['text'] = self.author + '\n' + self.summary
-        attachment['color'] = '#2eb886'
+        # 更新: orange; else: green
+        if self.is_update:
+            attachment['color'] = '#ffa500'
+        else:
+            attachment['color'] = '#2eb886'
 
         return attachment
 
@@ -116,7 +121,9 @@ def main():
         attachment_list.append(parsed_entry.make_attachment())
 
     # 送る
-    slack_sender.notify(attachments=attachment_list)
+    for attachment in attachment_list:
+        slack_sender.notify(attachments=[attachment])
+    # slack_sender.notify(attachments=attachment_list)
     # print(attachment_list)
 
     # logging

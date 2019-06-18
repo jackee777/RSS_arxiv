@@ -26,3 +26,8 @@ HOME 以下に yaml format で置く
 - nltk
 - gensim
 - pyyaml (yaml)
+
+## Note
+- arXiv の更新タイミング例: 
+`<pubDate>Tue, 18 Jun 2019 00:30:00 GMT</pubDate>` -> JST 9:30
+

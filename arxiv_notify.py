@@ -123,8 +123,9 @@ def main():
     # 送る
     for attachment in attachment_list:
         slack_sender.notify(attachments=[attachment])
+        time.sleep(1)
     # slack_sender.notify(attachments=attachment_list)
-    # print(attachment_list)
+    print(attachment_list)
 
     # logging
     write_feed_time(config['time_log'], feed_time)

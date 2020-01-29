@@ -1,4 +1,4 @@
-url: 'https://hooks.slack.com/services/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'
+url: 'https://hooks.slack.com/services/hoge'
 abst_type: 'textrank'
 time_log: '/work/usr/RSS_arxiv/log/time.log'
 exec_log: '/work/usr/RSS_arxiv/log/exec.log'

@@ -24,6 +24,10 @@ HOME 以下に yaml format で置く
 - time\_log: log path (feed time が入ってくる)
 - exec\_log: log path (logging が入ってくる)
 
+### webhook url について
+参考記事とかで探してください  
+git とかに直書きしないように（1敗）
+
 ## requirements
 - feedparser
 - slackweb

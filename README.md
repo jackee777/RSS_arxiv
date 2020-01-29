@@ -2,7 +2,7 @@
 arxiv cs cl RSS からいい感じに新着をとってくるスクリプト
 
 ## 概要図
-![fig](./image/fig.pdf)
+![fig](./image/fig.png)
 
 ## 取ってくる内容物
 - title

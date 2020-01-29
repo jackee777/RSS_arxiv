@@ -113,7 +113,7 @@ def main():
         sys.exit(0)
 
     # entry が100件越えると自動で死ぬようにする
-    assert len(rss_result['entries']) <= 100, 'the entry num: {}'.format(len(rss_result['entries']))
+    # assert len(rss_result['entries']) <= 100, 'the entry num: {}'.format(len(rss_result['entries']))
 
     # 1エントリずつ parse -> 入れ物へ
     for entry in rss_result['entries']:
@@ -125,7 +125,7 @@ def main():
         slack_sender.notify(attachments=[attachment])
         time.sleep(1)
     # slack_sender.notify(attachments=attachment_list)
-    print(attachment_list)
+    # print(attachment_list)
 
     # logging
     write_feed_time(config['time_log'], feed_time)

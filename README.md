@@ -1,6 +1,9 @@
 # RSS_arxiv
 arxiv cs cl RSS からいい感じに新着をとってくるスクリプト
 
+## 概要図
+![fig](./image/fig.pdf)
+
 ## 取ってくる内容物
 - title
 - author
@@ -14,7 +17,8 @@ arxiv cs cl RSS からいい感じに新着をとってくるスクリプト
 - lead-3
 
 ## config
-HOME 以下に yaml format で置く
+HOME 以下に yaml format で置く  
+- `_arxiv_ntfy.yml`: config 例、log path だけ変えてください
 - url: slack webhook url
 - abst\_type: textrank or lead-3
 - time\_log: log path (feed time が入ってくる)
@@ -31,3 +35,5 @@ HOME 以下に yaml format で置く
 - arXiv の更新タイミング例: 
 `<pubDate>Tue, 18 Jun 2019 00:30:00 GMT</pubDate>` -> JST 9:30
 
+## 参考
+- https://qiita.com/TatsuyaMizuguchi17/items/35dd3dd1396864006031
